@@ -1,10 +1,11 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthGuard } from '../components/auth/AuthGuard';
 import { MainLayout } from '../components/layout/MainLayout';
+import { ProfilePage } from '../pages';
+import { AuthCallbackPage } from '../pages/AuthCallbackPage';
+import { DashboardPage } from '../pages/DashboardPage';
 import { LandingPage } from '../pages/LandingPage';
 import { LoginPage } from '../pages/LoginPage';
-import { DashboardPage } from '../pages/DashboardPage';
-import { AuthCallbackPage } from '../pages/AuthCallbackPage';
 
 export const AppRouter = () => {
   return (
@@ -21,6 +22,17 @@ export const AppRouter = () => {
           <AuthGuard>
             <MainLayout>
               <DashboardPage />
+            </MainLayout>
+          </AuthGuard>
+        }
+      />
+
+      <Route
+        path="/profile"
+        element={
+          <AuthGuard>
+            <MainLayout>
+              <ProfilePage />
             </MainLayout>
           </AuthGuard>
         }

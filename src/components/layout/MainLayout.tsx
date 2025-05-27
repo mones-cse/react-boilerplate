@@ -1,8 +1,12 @@
-import { Layout, Button, Avatar, Dropdown, Space } from 'antd';
-import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  LogoutOutlined,
+  SettingOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Avatar, Button, Dropdown, Layout, Space } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/auth.store';
-import type { MenuProps } from 'antd';
 
 const { Header, Content } = Layout;
 
@@ -16,13 +20,19 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   const menuItems: MenuProps['items'] = [
     {
-      key: 'profile',
+      key: 'email',
       label: user?.email,
       icon: <UserOutlined />,
       disabled: true,
     },
     {
       type: 'divider',
+    },
+    {
+      key: 'profile',
+      label: 'Profile Settings',
+      icon: <SettingOutlined />,
+      onClick: () => navigate('/profile'),
     },
     {
       key: 'logout',
@@ -35,7 +45,12 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <Layout className="w-screen">
       <Header className="bg-white shadow-sm px-4 flex items-center justify-between">
-        <div className="text-xl font-semibold text-white">Todo App</div>
+        <div
+          className="text-xl font-semibold cursor-pointer"
+          onKeyDown={() => navigate('/dashboard')}
+        >
+          Todo App
+        </div>
 
         <Dropdown menu={{ items: menuItems }} placement="bottomRight">
           <Space className="cursor-pointer">

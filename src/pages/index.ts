@@ -1,4 +1,6 @@
+export { AuthCallbackPage } from './AuthCallbackPage';
+export { DashboardPage } from './DashboardPage';
 export { LandingPage } from './LandingPage';
 export { LoginPage } from './LoginPage';
-export { DashboardPage } from './DashboardPage';
-export { AuthCallbackPage } from './AuthCallbackPage';
+export { ProfilePage } from './ProfilePage';
+export { RegisterPage } from './RegisterPage';
