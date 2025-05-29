@@ -1,6 +1,7 @@
 # React Boilerplate
 
-A modern React application with TypeScript, Tailwind CSS, and Ant Design.
+A modern React application with TypeScript, Tailwind CSS, and Ant Design. This boilerplate is the frontend part for a Todo application with social/email login that integrates with a NestJS backend API.
+The NestJS backend is available in the [nestjs-boilerplate]().
 
 ## Features
 
@@ -25,7 +26,6 @@ A modern React application with TypeScript, Tailwind CSS, and Ant Design.
 
    ```bash
    pnpm install
-
    ```
 
 2. Create .env.local:
@@ -33,10 +33,11 @@ A modern React application with TypeScript, Tailwind CSS, and Ant Design.
    cp .env.example .env.local
    ```
 3. Update `.env.local` with your values:
+
    ```bash
    VITE_API_URL=http://localhost:3000
-   VITE_GOOGLE_CLIENT_ID=your-google-client-id
    ```
+
 4. Start development server:
    ```bash
    pnpm run dev
@@ -53,14 +54,14 @@ A modern React application with TypeScript, Tailwind CSS, and Ant Design.
 
 ```
 src/
-├── components/ # Reusable components
-├── pages/ # Page components
-├── services/ # API services
-├── store/ # Zustand stores
-├── hooks/ # Custom hooks
-├── types/ # TypeScript types
-├── router/ # Route configuration
-└── utils/ # Utility functions
+├── components/   # Reusable components
+├── pages/        # Page components
+├── services/     # API services
+├── store/        # Zustand stores
+├── hooks/        # Custom hooks
+├── types/        # TypeScript types
+├── router/       # Route configuration
+└── utils/        # Utility functions
 ```
 
 ## Technologies
@@ -74,6 +75,9 @@ src/
 - Zustand
 - React Router v6
 - Axios
+- Zod
+- ESLint
+- Prettier
 
 ## License
 
